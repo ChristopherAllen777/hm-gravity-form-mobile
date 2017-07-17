@@ -40,7 +40,8 @@ h1{
 h1.voter {
     text-align: center;
     font-family: Helvetica;
-        padding-top: 19px;
+    padding-top: 19px;
+    font-size: 31px;
 }
 @media (max-width: 700px) {
     h1.voter {
