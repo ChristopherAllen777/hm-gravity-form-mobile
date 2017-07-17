@@ -12,42 +12,18 @@
     </head>
     <body>
                <div class="container-fluid">
-
-
-
                       <div id="heading" class="row">
                             <div class="col-xs-4 col-sm-3">
-                            <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
+                                <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
                             </div>
                             <div class="col-xs-8 col-sm-9">
                                 <h1 id="voter" class="voter">VOTER REGISTRATION</h1>
                             </div>
                             <!-- Add clearfix for only the required viewport -->
                             <div class="col-xs-12 col-sm-12">
-                                
                                 <p class="subheading" >Voter registration takes an average of two minutes or less to complete.</p>
                             </div>
                       </div>
-
-
-<!--
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
-                        </div>
-                        <div class="col-lg-7">
-                             <h1 class="voter">VOTER REGISTRATION</h1>
-                    <hr>
-                    <p>Voter registration takes an average of two minutes or less to complete.</p>
-                    <p>Engage Nevada is a non-profit, non-partisan 501(c)(4) organization for civic engagement.</p>
-                    <p>If you have a valid driver's license of identification card issued by the Nevada DMV, you can
-                        register online in Nevada. If you'd like to, select "I have a current NV state identificiation
-                        card or driver's license" and then click "Next Step" and we'll take you to the Nevada Secretary
-                        of State's online voter registration system.</p>
-                    <p>If you don't have a stat-issued ID, you can still register to vote using a paper form. Select "I dont't 
-                        have a current NV state identification card or driver's licence" and then click "Next Step" and we'll 
-                        take you to the Nevada Secretary of State website where you can print off your registration application.</p>
-                 </div>-->
 
             <div class="row">
                 <div id ="form" class="col-sm-12">
@@ -103,14 +79,14 @@
                                  <div class="col-md-12">
                                     <div class="checkbox">
                                         <label>
-                                        <input type="checkbox" class="sev_check" name="chk1" />I HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENCE.</label>
+                                        <input id="chk1" type="checkbox" class="sev_check" name="chk" value="yes" />I HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENCE.</label>
                                     </div>
                                 </div>
 
                                  <div class="col-md-12">
                                     <div class="checkbox">
                                         <label>
-                                        <input type="checkbox" class="sev_check" name="chk2" />I DO NOT HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENSE.</label>
+                                        <input id="chk2" type="checkbox" class="sev_check" name="chk" value="no" />I DO NOT HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENSE.</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -134,7 +110,7 @@
                 </div>
            </footer>
      </div>  <!-- /.container-->
-        </div> <!-- row -->
+</div> <!-- row -->
         <script>
             // Allows checkboxes to only make one selection using jQuery
             $('.sev_check').click(function() {
@@ -148,7 +124,8 @@
                     name: $("#form_name").val().trim(),
                     last: $("#form_lastname").val().trim(),
                     email: $("#form_email").val().trim(),
-                    zip: $("#form_zip").val().trim()
+                    zip: $("#form_zip").val().trim(),
+                    driversLicense: $('input[name="chk"]:checked').val()
                 };
 
             // Question: What does this code do??

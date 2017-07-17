@@ -7,7 +7,7 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -22,19 +22,22 @@ var characters = [{
   name: "Chris",
   last: "Allen",
   email: "test@test.com",
-  zip: 78741
+  zip: 78741,
+  driversLicense: "yes"
 }, {
   routeName: "joe",
   name: "Joe",
   last: "Smith",
   email: "yahoo@yahoo.com",
-  zip: 54321
+  zip: 54321,
+  driversLicense: "no"
 }, {
   routeName: "sarah",
   name: "Sarah",
   last: "Parker",
   email: "sarah@gmail.com",
-  zip: 11111
+  zip: 11111,
+  driversLicense: "yes"
 }];
 
 // Routes
