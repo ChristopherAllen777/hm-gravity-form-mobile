@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Chris Allen - Contact Form</title>
+        <!-- jQuery script -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='assets/css/style.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+           <div class="row">
+
+               <div class="container-fluid">
+
+                <div id ="form" class="col-sm-5">
+
+                    <form id="contact-form" method="post" action="contact.php" role="form">
+                        
+                        <div class="message">
+
+                            <div class="controls">
+                        
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h1>Let's get started with some basic voter information:</h1>
+                                        <label for="form_name">First Name</label>
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Last Name</label>
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_email">Email</label>
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_zip">Zip</label>
+                                        <input id="form_zip" type="tel" name="zipcode" class="form-control" placeholder="Please enter your zipcode">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                       <p>Do you have a valid driver's license or identification card issued by the Nevada DMV?</p>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-12">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox" class="sev_check" name="chk1" />I HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENCE.</label>
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-12">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox" class="sev_check" name="chk2" />I DO NOT HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENSE.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input id="submit" type="submit" class="btn btn-success btn-send" value="Next Step >">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div> <!--id ="form" class="col-sm-6"-->
+
+        <div class="col-sm-5">
+          <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
+          <h1 class="voter">VOTER REGISTRATION</h1>
+          <hr>
+          <p>Voter registration takes an average of two minutes or less to complete.</p>
+          <p>Engage Nevada is a non-profit, non-partisan 501(c)(4) organization for civic engagement.</p>
+          <p>If you have a valid driver's license of identification card issued by the Nevada DMV, you can
+              register online in Nevada. If you'd like to, select "I have a current NV state identificiation
+              card or driver's license" and then click "Next Step" and we'll take you to the Nevada Secretary
+               of State's online voter registration system.</p>
+          <p>If you don't have a stat-issued ID, you can still register to vote using a paper form. Select "I dont't 
+              have a current NV state identification card or driver's licence" and then click "Next Step" and we'll 
+              take you to the Nevada Secretary of State website where you can print off your registration application.</p>
+        </div> <!-- col-lg-6 -->
+      </div> <!-- row -->
+
+           <footer class="footer">
+                <div class="footertxt">
+                    <span class="text-muted">Copyright Engage Nevada, Inc. 2015. All Rights Reserved</span>
+                </div>
+           </footer>
+
+        </div> <!-- /.container-->
+        <script>
+            // Allows checkboxes to only make one selection using jQuery
+            $('.sev_check').click(function() {
+                $('.sev_check').not(this).prop('checked', false);
+            });
+
+            // Question: What does this code do?
+            $("#submit").on("click", function(event) {
+                event.preventDefault();
+                var newCharacter = {
+                    name: $("#form_name").val().trim(),
+                    last: $("#form_lastname").val().trim(),
+                    email: $("#form_email").val().trim(),
+                    zip: $("#form_zip").val().trim()
+                };
+
+            // Question: What does this code do??
+            $.post("/api/new", newCharacter)
+            .done(function(data) {
+                console.log(data);
+                alert("Adding submission...");
+                });
+            });
+        </script>
+        <!-- Script Links -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="validator.js"></script>
+        <script src="contact.js"></script>
+    </body>
+</html>

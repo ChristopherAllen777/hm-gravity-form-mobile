@@ -1,0 +1,24 @@
+{
+  "name": "hm-gravity-form",
+  "version": "1.0.0",
+  "description": "Coding Test - Sign up form for WordPress Gravity Form",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherAllen777/hm-gravity-form.git"
+  },
+  "author": "Chris Allen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristopherAllen777/hm-gravity-form/issues"
+  },
+  "homepage": "https://github.com/ChristopherAllen777/hm-gravity-form#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "path": "^0.12.7"
+  }
+}
