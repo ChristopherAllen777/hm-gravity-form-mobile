@@ -11,11 +11,46 @@
         <link href='assets/css/style.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
-           <div class="row">
-
                <div class="container-fluid">
 
-                <div id ="form" class="col-sm-5">
+
+
+                      <div id="heading" class="row">
+                            <div class="col-xs-4 col-sm-3">
+                            <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
+                            </div>
+                            <div class="col-xs-8 col-sm-9">
+                                <h1 id="voter" class="voter">VOTER REGISTRATION</h1>
+                            </div>
+                            <!-- Add clearfix for only the required viewport -->
+                            <div class="col-xs-12 col-sm-12">
+                                
+                                <p class="subheading" >Voter registration takes an average of two minutes or less to complete.</p>
+                            </div>
+                      </div>
+
+
+<!--
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
+                        </div>
+                        <div class="col-lg-7">
+                             <h1 class="voter">VOTER REGISTRATION</h1>
+                    <hr>
+                    <p>Voter registration takes an average of two minutes or less to complete.</p>
+                    <p>Engage Nevada is a non-profit, non-partisan 501(c)(4) organization for civic engagement.</p>
+                    <p>If you have a valid driver's license of identification card issued by the Nevada DMV, you can
+                        register online in Nevada. If you'd like to, select "I have a current NV state identificiation
+                        card or driver's license" and then click "Next Step" and we'll take you to the Nevada Secretary
+                        of State's online voter registration system.</p>
+                    <p>If you don't have a stat-issued ID, you can still register to vote using a paper form. Select "I dont't 
+                        have a current NV state identification card or driver's licence" and then click "Next Step" and we'll 
+                        take you to the Nevada Secretary of State website where you can print off your registration application.</p>
+                 </div>-->
+
+            <div class="row">
+                <div id ="form" class="col-sm-12">
 
                     <form id="contact-form" method="post" action="contact.php" role="form">
                         
@@ -78,6 +113,10 @@
                                         <input type="checkbox" class="sev_check" name="chk2" />I DO NOT HAVE A CURRENT NV STATE IDENTIFICATION CARD OR DRIVER'S LICENSE.</label>
                                     </div>
                                 </div>
+                                <div class="col-md-12">
+                                    <p> Click "Next Step" and we'll take you to the Nevada Secretary of State website
+                                        to complete your voter registration application.</p>
+                                </div>
 
                                 <div class="col-md-12">
                                     <input id="submit" type="submit" class="btn btn-success btn-send" value="Next Step >">
@@ -87,30 +126,15 @@
                     </div>
                 </form>
             </div> <!--id ="form" class="col-sm-6"-->
-
-        <div class="col-sm-5">
-          <img src="assets/images/nevadalogo.png" alt="Engage Nevada">
-          <h1 class="voter">VOTER REGISTRATION</h1>
-          <hr>
-          <p>Voter registration takes an average of two minutes or less to complete.</p>
-          <p>Engage Nevada is a non-profit, non-partisan 501(c)(4) organization for civic engagement.</p>
-          <p>If you have a valid driver's license of identification card issued by the Nevada DMV, you can
-              register online in Nevada. If you'd like to, select "I have a current NV state identificiation
-              card or driver's license" and then click "Next Step" and we'll take you to the Nevada Secretary
-               of State's online voter registration system.</p>
-          <p>If you don't have a stat-issued ID, you can still register to vote using a paper form. Select "I dont't 
-              have a current NV state identification card or driver's licence" and then click "Next Step" and we'll 
-              take you to the Nevada Secretary of State website where you can print off your registration application.</p>
-        </div> <!-- col-lg-6 -->
-      </div> <!-- row -->
-
+        </div> <!-- row -->
+     
            <footer class="footer">
                 <div class="footertxt">
-                    <span class="text-muted">Copyright Engage Nevada, Inc. 2015. All Rights Reserved</span>
+                    <span class="text-muted"> Engage Nevada is a non-profit, non-partisan 501(c)(4) <br> organization for civic engagement</span>
                 </div>
            </footer>
-
-        </div> <!-- /.container-->
+     </div>  <!-- /.container-->
+        </div> <!-- row -->
         <script>
             // Allows checkboxes to only make one selection using jQuery
             $('.sev_check').click(function() {
