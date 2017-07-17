@@ -9,6 +9,9 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 8000;
 
+// define the path to use style sheets & images - public folder
+app.use(express.static(path.join(__dirname, '/public')));
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
