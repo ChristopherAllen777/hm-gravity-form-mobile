@@ -127,7 +127,7 @@
                     zip: $("#form_zip").val().trim(),
                     driversLicense: $('input[name="chk"]:checked').val()
                 };
-
+                console.log(newCharacter);
             // Question: What does this code do??
             $.post("/api/new", newCharacter)
             .done(function(data) {
